@@ -22,10 +22,15 @@ var Module = function(){
         paths = document.getElementsByTagName("path");
         for (var i = 0; i < paths.length; i++){
             paths[i].addEventListener("click", function (event) {
-                const bid = event.target.id;
-                //bid.innerHTML = '<g><rect width="100%" height="100%" fill = "green"/></g>';
-                cambioColor(bid);  
-                agregarElemento(bid);              
+                const bid = event.target.id;                
+                ntropas = window.prompt('Dijite numero de tropas que atacan');
+                //Por ahora es 100 pero debe ser el valor que se consulte del numero de tropas disponible
+                if(ntropas != null && ntropas < 100) {
+                    cambioColor(bid);  
+                    agregarElemento(bid,ntropas); 
+                } else {
+                    alert("El valor de las tropas debe ser diferente a nulo y menor o igual a las disponibles")
+                }                                          
             });
         }
     }
@@ -35,11 +40,11 @@ var Module = function(){
         region.style.fill = 'red';        
     }
 
-    var agregarElemento = function (id){
+    var agregarElemento = function (id,tropas){
         const {x,y} = puntoMedio(id);
         var regiones = document.getElementById("regiones");
         var center = document.createElementNS('http://www.w3.org/2000/svg', "g");
-        center.innerHTML = '<circle cx =' + '"' + x + '"' + 'cy =' + '"' + y + '"' + 'r="25"/><text x='+ '"' + x + '"' + 'y =' + '"' + y + '" style="fill:black;font-weight: bold;">20</text>';
+        center.innerHTML = '<circle cx =' + '"' + x + '"' + 'cy =' + '"' + y + '"' + 'r="25"/><text x='+ '"' + (x-10) + '"' + 'y =' + '"' + (y+5) + '" style="fill:black;font-weight: bold;">'+tropas+'</text>';
         regiones.appendChild(center);   
     }
 
@@ -55,9 +60,10 @@ var Module = function(){
         }
     }
 
-    var loadPlayers = function () {        
-        agregarElemento("COL1283");
-        agregarElemento("COL1318");
+    var loadPlayers = function () {
+        //Se debe hacer la consulta de tropas iniciales para mandar al parametro         
+        agregarElemento("COL1283",100);
+        agregarElemento("COL1318",100);
     }
 
     /**var socketConnection = function (){
