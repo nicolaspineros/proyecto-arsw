@@ -24,11 +24,11 @@ var Module = function(){
             paths[i].addEventListener("click", function (event) {
                 const bid = event.target.id;
                 //bid.innerHTML = '<g><rect width="100%" height="100%" fill = "green"/></g>';
-                cambioColor(bid);
-                
+                //cambioColor(bid);
+                let region = document.getElementById(bid);
+                region.style.fill = 'red';
             });
         }
-        
     }
 
     var cambioColor = function (idRegion) {
@@ -39,6 +39,9 @@ var Module = function(){
         centerPoint.x = box.x + box.width / 2;
         centerPoint.y = box.y + box.height / 2;
         region.innerHTML = '<rect cx =' + '"' + centerPoint.x + '"' + 'cy =' + '"' + centerPoint.y + '"' + '></rect>';
+        console.log(centerPoint.x);
+        console.log(centerPoint.y);
+        console.log("llamado " + idRegion);
        // region.innerHTML = "prueba";
     }
 
@@ -60,15 +63,15 @@ var Module = function(){
     }
 
     return {
+
+        init: function () {            
+            loadRegionButton();                        
+        },
+        
         usuario: function(){
             autor = document.getElementById("Autor").value;
             apiUser.getUser(autor,getUser);
-        },
-
-        alerta: function(){
-            loadRegionButton();
-        }
-        
+        },       
         
     }
 }();
