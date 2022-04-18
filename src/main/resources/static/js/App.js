@@ -24,9 +24,7 @@ var Module = function(){
             paths[i].addEventListener("click", function (event) {
                 const bid = event.target.id;
                 //bid.innerHTML = '<g><rect width="100%" height="100%" fill = "green"/></g>';
-                //cambioColor(bid);
-                let region = document.getElementById(bid);
-                region.style.fill = 'red';
+                cambioColor(bid);                
             });
         }
     }
