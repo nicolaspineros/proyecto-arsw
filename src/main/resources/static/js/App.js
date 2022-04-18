@@ -30,17 +30,18 @@ var Module = function(){
     }
 
     var cambioColor = function (idRegion) {
-        let region = document.getElementById(idRegion);
+        let region = document.getElementById(idRegion);        
         region.style.fill = 'red';
         let box = region.getBBox();
         var centerPoint = new Object();
         centerPoint.x = box.x + box.width / 2;
         centerPoint.y = box.y + box.height / 2;
-        region.innerHTML = '<rect cx =' + '"' + centerPoint.x + '"' + 'cy =' + '"' + centerPoint.y + '"' + '></rect>';
+        var regiones = document.getElementById("regiones");
+        var center = document.createElementNS('http://www.w3.org/2000/svg', "g");
+        center.innerHTML = '<circle cx =' + '"' + centerPoint.x + '"' + 'cy =' + '"' + centerPoint.y + '"' + 'r="25"><circle>';
+        regiones.appendChild(center);
         console.log(centerPoint.x);
-        console.log(centerPoint.y);
-        console.log("llamado " + idRegion);
-       // region.innerHTML = "prueba";
+        console.log(centerPoint.y);       
     }
 
     /**var socketConnection = function (){
