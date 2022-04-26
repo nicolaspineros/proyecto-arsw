@@ -8,6 +8,11 @@ public class Sala {
     public SynchronousQueue<ArrayList> colaEventos;
     public HashMap<String, Pais> listaPaises;
 
+    public static void main(String[] args){
+        Pais x = new Pais(100, "Nicolas", 40,40);
+        Pais y = new Pais(100, "Julian", 90,90);
+
+    }
     public Sala (){
         colaEventos = new SynchronousQueue<ArrayList>();
         listaPaises = new HashMap<String, Pais>();

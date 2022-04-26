@@ -8,9 +8,9 @@ public class Pais {
     private int totalTropas = 20;
     private Object flag;
     private int limite;
-    private Thread aumTropas;
     private int coordX;
     private int coordY;
+    private boolean permisoAumento = false;
 
     public Pais(int Limite, String dueño, int coordX, int coordY) {
         flag = new Object();
@@ -18,12 +18,19 @@ public class Pais {
         this.coordY = coordY;
         this.dueño = dueño;
         this.limite = Limite;
-        aumTropas = new aumentoTropas();
         starAumentoTropas();
 
     }
+    public void setDueño(String dueño){
+        this.dueño = dueño;
+        permisoAumento = true;
+    }
     public void starAumentoTropas(){
-        aumTropas.start();
+
+        while(permisoAumento && dueño != null && totalTropas <= limite){
+            totalTropas += 1;
+            System.out.println(totalTropas);
+        }
     }
     public String getDueño() {
         return dueño;
@@ -52,11 +59,8 @@ public class Pais {
 
     }
     public void Atacar(Pais pais) {
-        aumentoTropas.interrupted();
         HiloAtaque hilo = new HiloAtaque(pais);
         hilo.start();
-
-
 
     }
     public class HiloAtaque extends Thread{
@@ -77,7 +81,7 @@ public class Pais {
         }
     }
 
-    public class aumentoTropas extends Thread {
+    /**public class aumentoTropas extends Thread {
         public aumentoTropas() {
 
         }
@@ -97,7 +101,7 @@ public class Pais {
             }
         }
 
-    }
+    }**/
 
 
 
