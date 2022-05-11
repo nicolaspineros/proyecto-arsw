@@ -14,7 +14,7 @@ public class WebSockerConfiguration implements WebSocketMessageBrokerConfigurer 
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/chat-events/"); //Donde recibo mensajes del servidor
+        registry.enableSimpleBroker("/events"); //Donde recibo mensajes del servidor
         registry.setApplicationDestinationPrefixes("/app");
     }
     @Override

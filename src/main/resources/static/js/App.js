@@ -9,7 +9,9 @@ var Module = function(){
         } else {
             //socketConnection()
             location.href = "mapa.html";
-            sendEvent(JSONvalue)
+            User = JSONvalue;
+            console.log(User);
+            sendEvent(JSONvalue);
         }
     }
 
@@ -22,7 +24,7 @@ var Module = function(){
         paths = document.getElementsByTagName("path");
         for (var i = 0; i < paths.length; i++){
             paths[i].addEventListener("click", function (event) {
-                const bid = event.target.id;                
+                const bid = event.target.id;               
                 ntropas = window.prompt('Dijite numero de tropas que atacan');
                 //Por ahora es 100 pero debe ser el valor que se consulte del numero de tropas disponible
                 if(ntropas != null && ntropas < 100) {
