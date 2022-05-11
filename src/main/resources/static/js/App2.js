@@ -3,12 +3,14 @@ let dinero = 0;
 let onPosetion = new Map();
 let start = true;
 let colorCliente;
+let departamentosProp=[];
+
 let aumDinero = function(){
     setInterval(function(){
         dinero++
         let T1 =document.getElementById("Dinero");
         T1.textContent=dinero;
-    }, 1000);
+    }, 10000-(departamentosProp)*10);
 }
 
 
@@ -18,6 +20,7 @@ let loadAndAddlistener = function(){
         paths[i].addEventListener("click", function (event) {
             const bid = event.target.id;
             onStart(bid);
+            generateId();
         });
     }
 }
@@ -32,6 +35,13 @@ let onStart = function(id){
     }
 
 }
+let generateId = function(){
+    Usuario = Math.floor(Math.random() * (10000 - 1 + 1) + 1);
+    console.log(Usuario);
+
+
+}
+
 
 let setColor = function(){
     colorCliente  = document.querySelector('#Color').value;
