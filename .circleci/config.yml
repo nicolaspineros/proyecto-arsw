@@ -44,6 +44,7 @@ jobs:
       - run: mvn test
     
 workflows:
+  version: 2
   main:
     jobs:
       - build: 
