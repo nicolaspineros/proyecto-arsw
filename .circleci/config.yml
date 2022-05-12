@@ -43,8 +43,8 @@ jobs:
       # run tests!
       - run: mvn test
     
-    workflows:
-      main:
-        jobs:
-          - build: 
-              context: SonarCloud
+workflows:
+  main:
+    jobs:
+      - build: 
+          context: SonarCloud
