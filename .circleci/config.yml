@@ -1,0 +1,17 @@
+version: 2.1
+
+machine:
+  java:
+    version: oraclejdk8
+
+deployment:
+  staging:
+    branch: main
+    heroku: 
+      appname: wargameapp
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
