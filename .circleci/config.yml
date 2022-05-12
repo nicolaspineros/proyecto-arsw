@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run: 
           name: Analyze on SonarCloud
-          comand: mvn verify sonar:sonar -Dsonar.projectKey=ProyectoARSW-WarGame_WarGame
+          command: mvn verify sonar:sonar -Dsonar.projectKey=ProyectoARSW-WarGame_WarGame
 
       # Download and cache dependencies
       - restore_cache:
