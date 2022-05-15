@@ -8,7 +8,7 @@ var Module = function(){
             alert("No existe el autor ingresado");
         } else {
             //socketConnection()
-            location.href = "mapa.html";
+            location.href = "Prueba.html";
             User = JSONvalue;
             console.log(User);
             sendEvent(JSONvalue);
