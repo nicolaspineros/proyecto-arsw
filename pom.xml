@@ -17,8 +17,6 @@
 
 	<properties>
 		<java.version>16</java.version>
-		<sonar.organization>proyectoarsw-wargame</sonar.organization>
-  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,14 +35,14 @@
 		</dependency>
 
 		<dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongo-java-driver</artifactId>
-            <version>3.12.7</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
+
 		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20211205</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.3.1</version>
 		</dependency>
 
 		<dependency>
@@ -58,12 +56,17 @@
             <artifactId>sockjs-client</artifactId>
             <version>1.5.1</version>
         </dependency>
+		
 
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>stomp-websocket</artifactId>
             <version>2.3.4</version>
-        </dependency> 
+        </dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator-core</artifactId>
+		</dependency>
 
 		
 		<dependency>
@@ -76,7 +79,21 @@
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
             <version>3.6.0</version>
-        </dependency>    
+        </dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20180130</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

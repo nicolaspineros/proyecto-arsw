@@ -3,14 +3,14 @@ package edu.eci.arsw.warGame.model;
 public class Player {
     String usuario;
     String paisInicial;
-    String ColorPlayer;
+    String colorPlayer;
 
     public String getPaisInicial() {
         return paisInicial;
     }
 
     public String getColorPlayer() {
-        return ColorPlayer;
+        return colorPlayer;
     }
 
     public String getUsuario() {
@@ -21,11 +21,9 @@ public class Player {
         this.paisInicial = paisInicial;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+    public void setUsuario(String usuario) {this.usuario = usuario;}
 
     public void setColorPlayer(String colorPlayer) {
-        ColorPlayer = colorPlayer;
+        this.colorPlayer = colorPlayer;
     }
 }
