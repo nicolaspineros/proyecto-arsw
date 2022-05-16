@@ -17,8 +17,6 @@
 
 	<properties>
 		<java.version>16</java.version>
-		<sonar.organization>proyectoarsw-wargame</sonar.organization>
-  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
 		<dependency>

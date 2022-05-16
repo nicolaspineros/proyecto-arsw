@@ -2,12 +2,12 @@ edu\eci\arsw\warGame\services\WarGameLogin.class
 edu\eci\arsw\warGame\services\InGameServicesImpl.class
 edu\eci\arsw\warGame\controllers\UserController.class
 edu\eci\arsw\warGame\services\InGameServices.class
+edu\eci\arsw\warGame\model\Region.class
 edu\eci\arsw\warGame\persistence\ConexionSQL.class
 edu\eci\arsw\warGame\model\Player.class
 edu\eci\arsw\warGameApi\WarGameApplication.class
 edu\eci\arsw\warGame\persistence\autentificationLogin.class
 edu\eci\arsw\warGame\model\User.class
-edu\eci\arsw\warGameApi\pruebaConexion.class
 edu\eci\arsw\warGame\controllers\InGameController.class
 edu\eci\arsw\warGame\services\ServicesException.class
 edu\eci\arsw\warGame\configuration\WebSockerConfiguration.class
