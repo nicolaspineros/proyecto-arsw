@@ -16,7 +16,8 @@ var consultaUser = async()=>{
 
     if (data1){
         location.href = "Prueba.html";
-        localStorage.setItem("Usuario",user);
+        let us =document.getElementById("Autor").value
+        localStorage.setItem("Usuario",us);
     }
     else{
         var t2 = document.getElementById("Resultado");
