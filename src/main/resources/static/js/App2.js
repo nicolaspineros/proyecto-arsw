@@ -176,7 +176,7 @@ let setPaisColor = function(id, color){
 }
 
 var updateRegion = async(region)=>{
-    y = await fetch('http://localhost:8080/wargame/updateregion', {
+    y = await fetch('http://20.85.97.220:8080/wargame/updateregion', {
         method: "PUT",
         body: JSON.stringify(region),
         headers: {"Content-type" : "application/json"}
@@ -189,7 +189,7 @@ var updateRegion = async(region)=>{
 
 
 var addPlayer = async()=>{
-     y = await fetch('http://localhost:8080/wargame/putplayer', {
+     y = await fetch('http://20.85.97.220:8080/wargame/putplayer', {
         method: "PUT",
         body: JSON.stringify(Usuario),
         headers: {"Content-type" : "application/json"}
@@ -199,7 +199,7 @@ var addPlayer = async()=>{
 }
 
 var getPlayers = async()=>{
-    x = await fetch('http://localhost:8080/wargame/getplayers', {
+    x = await fetch('http://20.85.97.220:8080/wargame/getplayers', {
         mode: 'no-cors',
         method: 'GET',
         headers: {
@@ -235,7 +235,7 @@ var isMyProperty = function(id){
     return result;
 }
 var updateAllRegions = async()=>{
-    y = await fetch('http://localhost:8080/wargame/updateallregion', {
+    y = await fetch('http://20.85.97.220:8080/wargame/updateallregion', {
         method: "PUT",
         body: JSON.stringify(regiones),
         headers: {"Content-type" : "application/json"}
@@ -247,7 +247,7 @@ var updateAllRegions = async()=>{
 
 
 var putAllMap = async()=>{
-    y = await fetch('http://localhost:8080/wargame/putregions', {
+    y = await fetch('http://20.85.97.220:8080/wargame/putregions', {
         method: "PUT",
         body: JSON.stringify(regiones),
         headers: {"Content-type" : "application/json"}
@@ -256,7 +256,7 @@ var putAllMap = async()=>{
 }
 
 var getRegion = async(id)=>{
-    z = await fetch('http://localhost:8080/wargame/getRegion/' + id  + '/', {
+    z = await fetch('http://20.85.97.220:8080/wargame/getRegion/' + id  + '/', {
         mode: 'no-cors',
         method: 'GET',
         headers: {
