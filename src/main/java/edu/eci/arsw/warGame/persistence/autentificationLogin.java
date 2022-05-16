@@ -11,13 +11,13 @@ public class autentificationLogin extends ConexionSQL{
     java.sql.Statement st;
     ResultSet rs;
 
-    public boolean getUserLogin(String iduser) {
+    public boolean getUserLogin(String iduser, String contraseña) {
         try{
             Connection conexion = conectar();
             st = conexion.createStatement();
             String sql = "select * from register where idusuario='" + iduser + "';";
             rs = st.executeQuery(sql);
-            if (rs.next()) {
+            if (rs.next() && rs.getString("password").equals(contraseña)) {
                 return true;
             }
             else{
