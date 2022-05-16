@@ -6,6 +6,8 @@ import edu.eci.arsw.warGame.model.Region;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class autentificationLogin extends ConexionSQL{
     java.sql.Statement st;
@@ -25,7 +27,8 @@ public class autentificationLogin extends ConexionSQL{
             }
         }
         catch (Exception e) {
-            System.out.println("no se encontro registro");
+            Logger.getLogger(autentificationLogin.class.getName()).log(Level.SEVERE, null, e);
+            //System.out.println("no se encontro registro");
             return false;
         }
 
@@ -41,7 +44,8 @@ public class autentificationLogin extends ConexionSQL{
             conexion.close();
 
         }catch (Exception e) {
-            System.out.println("no se encontro registro");
+            Logger.getLogger(autentificationLogin.class.getName()).log(Level.SEVERE, null, e);
+            //System.out.println("no se encontro registro");
         }
         
     }
@@ -65,7 +69,8 @@ public class autentificationLogin extends ConexionSQL{
 
 
         } catch (Exception e) {
-            System.out.println("No se pudo cargar la tabla");
+            Logger.getLogger(autentificationLogin.class.getName()).log(Level.SEVERE, null, e);
+            //System.out.println("No se pudo cargar la tabla");
         }
         return datos;
 
@@ -82,7 +87,8 @@ public class autentificationLogin extends ConexionSQL{
             conexion.close();
 
         } catch (Exception e) {
-            System.out.println("El registro no se guado");
+            Logger.getLogger(autentificationLogin.class.getName()).log(Level.SEVERE, null, e);
+            //System.out.println("El registro no se guado");
         }
     }
     
@@ -96,7 +102,8 @@ public class autentificationLogin extends ConexionSQL{
             st.close();
             conexion.close();
         } catch (Exception e) {
-            System.out.println("No se pudo actualizar");
+            Logger.getLogger(autentificationLogin.class.getName()).log(Level.SEVERE, null, e);
+            //System.out.println("No se pudo actualizar");
         }
     }
 
@@ -116,7 +123,8 @@ public class autentificationLogin extends ConexionSQL{
 
 
         }catch (Exception e){
-            System.out.println("Error al Obtener la region");
+            Logger.getLogger(autentificationLogin.class.getName()).log(Level.SEVERE, null, e);
+            //System.out.println("Error al Obtener la region");
 
         }
         return region;
