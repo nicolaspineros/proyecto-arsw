@@ -4,7 +4,7 @@ var consultaUser = async()=>{
     user = btoa( document.getElementById("Autor").value);
 
     password = btoa(document.getElementById("pass").value);
-    url = 'http://localhost:8080/consult/' + user + '/' + password
+    url = 'http://ec2-34-230-4-251.compute-1.amazonaws.com:8080/consult/' + user + '/' + password
     data1 = await fetch(url, {
         mode: 'no-cors',
         method: 'GET',
